@@ -12,6 +12,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 import os
+from chromadb.config import Settings
 
 
 from dotenv import load_dotenv
@@ -57,7 +58,7 @@ if api_key:
     # Split and create embeddings for the documents
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=5000, chunk_overlap=500)
         splits = text_splitter.split_documents(documents)
-        from chromadb.config import Settings  # Use this for proper settings configuration
+        # Use this for proper settings configuration
 
 # Ensure that you provide the proper configuration
         client_settings = Settings(
