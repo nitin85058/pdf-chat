@@ -17,7 +17,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-st.secrets['HF_TOKEN']
+HF_TOKEN=st.secrets['HF_TOKEN']
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 
